@@ -6,14 +6,29 @@
 ## Install
 
 ````
+composer install
+````
+
+````
 npm install
 npm run watch
 ````
 
+
 ````
-composer install
+cp .env.example .env
 ````
 
+
+````
+php artisan migrate
+````
+
+````
+php artisan serve
+````
+
+## Test
 ````
 php artisan test
 ````
