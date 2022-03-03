@@ -1,0 +1,122 @@
+openapi: 3.0.3
+info:
+  title: 'Ogur Uyanik - Aloware Documentation'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/comment:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id: 30
+                      post_id: 1
+                      parent_id: null
+                      sub_parent_id: null
+                      name: ogur
+                      comment: 'hello there'
+                      status: '1'
+                      created_at: '2022-03-03T13:51:53.000000Z'
+                      updated_at: '2022-03-03T13:51:53.000000Z'
+                      deleted_at: null
+                      replies: []
+                  message: ''
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 30
+                        post_id: 1
+                        parent_id: null
+                        sub_parent_id: null
+                        name: ogur
+                        comment: 'hello there'
+                        status: '1'
+                        created_at: '2022-03-03T13:51:53.000000Z'
+                        updated_at: '2022-03-03T13:51:53.000000Z'
+                        deleted_at: null
+                        replies: []
+                    items:
+                      type: object
+                  message:
+                    type: string
+                    example: ''
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 16 characters.'
+                  example: fuyfsji
+                comment:
+                  type: string
+                  description: 'Must not be greater than 160 characters.'
+                  example: xxkacvjyvjhgxjldrmpeojnnspbocqofhxlwvmzpfhygstjxezfpgtnnzahobufn
+              required:
+                - name
+                - comment
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
