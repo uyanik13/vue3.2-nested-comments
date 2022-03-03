@@ -9,7 +9,9 @@
                 placeholder="Name*"
                 required
             />
-            <error-alert :message="errors ? errors['name'][0] : null" />
+            <error-alert
+                :message="errors && errors['name'] ? errors['name'][0] : null"
+            />
         </div>
         <div class="w-full lg:px-3 mt-2 mb-2 md:w-full">
             <textarea
@@ -19,7 +21,12 @@
                 placeholder="Type Your Comment"
                 required
             ></textarea>
-            <error-alert :message="errors ? errors['comment'][0] : null" />
+
+            <error-alert
+                :message="
+                    errors && errors['comment'] ? errors['comment'][0] : null
+                "
+            />
         </div>
         <div class="flex items-start justify-end w-full px-3 md:w-full">
             <div class="-mr-1">

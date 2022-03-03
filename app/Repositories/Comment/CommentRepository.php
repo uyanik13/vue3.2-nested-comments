@@ -11,6 +11,7 @@ class CommentRepository implements CommentRepositoryInterface
     {
         return Comment::where('status', 1)
         ->with('replies')
+        ->with('sub_replies')
         ->orderBy('updated_at', 'desc')
         ->get();
     }

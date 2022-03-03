@@ -170,19 +170,22 @@
 
                                             <div
                                                 class="flex-1 ml-8 mt--2 bg-gray-100 rounded-lg sm:px-6 sm:py-4"
-                                                v-if="subComment.sub_parent_id"
+                                                v-for="sub_sub_comment in subComment.sub_replies"
+                                                :key="sub_sub_comment.id"
                                             >
                                                 <strong>{{
-                                                    subComment.name
+                                                    sub_sub_comment.name
                                                 }}</strong>
                                                 <p class="text-xs sm:text-sm">
-                                                    {{ subComment.comment }}
+                                                    {{
+                                                        sub_sub_comment.comment
+                                                    }}
                                                 </p>
                                                 <span
                                                     class="text-xs text-gray-400"
                                                     >{{
                                                         getDate(
-                                                            subComment.created_at
+                                                            sub_sub_comment.created_at
                                                         )
                                                     }}</span
                                                 >

@@ -13,6 +13,7 @@ class Comment extends Model
 
     public function replies() {
         return $this->hasMany(self::class, 'parent_id','id')
+        ->with('sub_replies')
         ->whereNull('sub_parent_id')
         ->orderBy('created_at', 'desc');
     }
